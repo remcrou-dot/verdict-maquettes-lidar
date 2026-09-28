@@ -403,6 +403,36 @@
     "mo": 10.35,
     "phys": true
   },
+  "e579800_n6850800_w2000": {
+    "arbres": 8794,
+    "batiments": 3861,
+    "cote_m": 2000,
+    "dalles": 9,
+    "date": "2026-09-28",
+    "label": "Dreux",
+    "lat": 48.745749,
+    "lon": 1.36554,
+    "mo": 14.72,
+    "phys": true,
+    "plages": 0,
+    "points": 65719276,
+    "telechargees": 9,
+    "temps": {
+      "1 geometrie": 0.0,
+      "2 dalles WFS": 1.2,
+      "4 telechargement dalles": 12.8,
+      "4b lecture par plages": 0.0,
+      "5 crop + fusion": 39.6,
+      "6 emprises BDTOPO": 2.8,
+      "7 roofer": 216.1,
+      "8a maillage batiments": 5.0,
+      "8b maillage sol": 0.5,
+      "8c arbres": 0.4,
+      "8d grille physique": 7.7,
+      "9 export GLB": 0.4
+    },
+    "total_s": 286.5
+  },
   "e579800_n6850800_w800": {
     "arbres": 4792,
     "batiments": 370,
