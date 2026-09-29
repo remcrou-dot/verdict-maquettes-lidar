@@ -1518,6 +1518,36 @@
     "mo": 14.32,
     "phys": true
   },
+  "e894600_n6241200_w800": {
+    "arbres": 8929,
+    "batiments": 868,
+    "cote_m": 800,
+    "dalles": 4,
+    "date": "2026-09-29",
+    "label": "13 Avenue marcel cottreau 13009 Marseille",
+    "lat": 43.243835,
+    "lon": 5.395042,
+    "mo": 10.28,
+    "phys": true,
+    "plages": 0,
+    "points": 21960285,
+    "telechargees": 4,
+    "temps": {
+      "1 geometrie": 0.0,
+      "2 dalles WFS": 1.3,
+      "4 telechargement dalles": 9.3,
+      "4b lecture par plages": 0.0,
+      "5 crop + fusion": 6.6,
+      "6 emprises BDTOPO": 1.3,
+      "7 roofer": 27.4,
+      "8a maillage batiments": 0.8,
+      "8b maillage sol": 0.3,
+      "8c arbres": 0.1,
+      "8d grille physique": 1.3,
+      "9 export GLB": 0.2
+    },
+    "total_s": 48.6
+  },
   "e895500_n6245300_w800": {
     "arbres": 5968,
     "batiments": 1916,
