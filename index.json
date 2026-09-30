@@ -944,6 +944,36 @@
     "mo": 14.49,
     "phys": true
   },
+  "e654700_n6863200_w800": {
+    "arbres": 8125,
+    "batiments": 1068,
+    "cote_m": 800,
+    "dalles": 4,
+    "date": "2026-09-30",
+    "label": "160 Rue Oberkampf 75011 Paris",
+    "lat": 48.866805,
+    "lon": 2.382435,
+    "mo": 12.56,
+    "phys": true,
+    "plages": 0,
+    "points": 11575049,
+    "telechargees": 4,
+    "temps": {
+      "1 geometrie": 0.0,
+      "2 dalles WFS": 1.2,
+      "4 telechargement dalles": 5.5,
+      "4b lecture par plages": 0.0,
+      "5 crop + fusion": 5.7,
+      "6 emprises BDTOPO": 0.8,
+      "7 roofer": 56.4,
+      "8a maillage batiments": 4.5,
+      "8b maillage sol": 0.4,
+      "8c arbres": 0.2,
+      "8d grille physique": 7.8,
+      "9 export GLB": 0.2
+    },
+    "total_s": 82.7
+  },
   "e656300_n6862000_w800": {
     "arbres": 8785,
     "batiments": 1315,
