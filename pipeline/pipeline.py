@@ -106,6 +106,29 @@ def site_geometry(lat, lon, side):
     return cx, cy, snx, sny, key, window
 
 
+# ------------------------------------------------- GET avec reprises (geoplateforme)
+def http_get(url, params=None, timeout=60, tries=4):
+    """La geoplateforme de l IGN rend des 429 et des 5xx passagers, plus souvent
+    quand plusieurs fabrications tournent en meme temps (30/09/2026). Un seul
+    essai tuait la fabrication en quelques secondes. Reprises avec attente
+    croissante, un peu desynchronisee pour que deux fabrications ne
+    retombent pas ensemble."""
+    last = None
+    for attempt in range(1, tries + 1):
+        try:
+            r = requests.get(url, params=params, timeout=timeout)
+            if r.status_code in (429, 500, 502, 503, 504):
+                raise IOError("HTTP %d" % r.status_code)
+            r.raise_for_status()
+            return r
+        except Exception as e:
+            last = e
+            log("  WFS : tentative %d/%d echouee (%s)" % (attempt, tries, e))
+            if attempt < tries:
+                time.sleep(3 * attempt + (os.getpid() % 5) * 0.4)
+    fail("requete WFS impossible : %s" % last)
+
+
 # ---------------------------------------------------- etape 2 : dalles (WFS)
 def wfs_dalles(window):
     params = {
@@ -117,8 +140,7 @@ def wfs_dalles(window):
         "OUTPUTFORMAT": "application/json", "COUNT": "500",
         "BBOX": "%f,%f,%f,%f,urn:ogc:def:crs:EPSG::2154" % window,
     }
-    r = requests.get(WFS, params=params, timeout=60)
-    r.raise_for_status()
+    r = http_get(WFS, params=params, timeout=60)
     out = []
     for f in r.json().get("features", []):
         p = f.get("properties", {})
@@ -383,8 +405,7 @@ def fetch_footprints(window, out_geojson):
         "SRSNAME": "EPSG:2154", "COUNT": "10000",
         "BBOX": "%f,%f,%f,%f,urn:ogc:def:crs:EPSG::2154" % window,
     }
-    r = requests.get(WFS, params=params, timeout=120)
-    r.raise_for_status()
+    r = http_get(WFS, params=params, timeout=120)
     fc = r.json()
     # membre crs requis pour qu'OGR (roofer) lise le Lambert-93
     fc["crs"] = {"type": "name", "properties": {"name": "urn:ogc:def:crs:EPSG::2154"}}

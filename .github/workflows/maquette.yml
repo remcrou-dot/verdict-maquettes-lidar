@@ -1,5 +1,13 @@
 name: Maquette LiDAR
 
+# LE NOM DE CHAQUE FABRICATION PORTE SA DEMANDE (30/09/2026). La fenetre de
+# Verdict retrouvait « sa » fabrication en prenant la plus recente lancee apres
+# sa demande : avec trois demandes en 17 secondes, un visiteur suivait la
+# maquette d un autre. Le nom porte desormais la position et le cote de la
+# demande, et la fenetre y lit la sienne. Le Worker n a pas a changer : il
+# transmet deja lat, lon et side dans client_payload.
+run-name: Maquette LiDAR ${{ github.event.client_payload.lat || github.event.inputs.lat }} ${{ github.event.client_payload.lon || github.event.inputs.lon }} ${{ github.event.client_payload.side || github.event.inputs.side }}
+
 on:
   workflow_dispatch:
     inputs:
@@ -32,9 +40,13 @@ on:
 permissions:
   contents: write
 
-concurrency:
-  group: maquette-factory
-  cancel-in-progress: false
+# PLUS DE FILE D ATTENTE UNIQUE (30/09/2026). Le groupe « maquette-factory »
+# faisait passer les fabrications une par une, et GitHub ne garde qu UNE
+# execution en attente par groupe : chaque nouvelle demande annulait celle qui
+# attendait (le 30/09 a 17 h 04, #148 et #149 annulees par #150, sans que leurs
+# visiteurs le sachent). Les fabrications tournent donc en parallele. Leur seul
+# point commun, l enregistrement du resultat dans le depot, se refait sur la
+# derniere version de main (voir « Commit et push du resultat »).
 
 jobs:
   maquette:
@@ -214,33 +226,62 @@ jobs:
           set -euo pipefail
           git config user.name 'maquette-bot'
           git config user.email 'maquette-bot@users.noreply.github.com'
-          # --sparse : glb/ est hors du perimetre du checkout partiel, et git
-          # refuserait d y ajouter un fichier sans cette option.
-          git add --sparse glb/ index.json
-          if [ -n "$REQUEST_FILE" ] && [ -f "$REQUEST_FILE" ]; then
-            git rm -q "$REQUEST_FILE"
-          fi
-          if git diff --cached --quiet; then
-            echo "Rien a committer."
-            exit 0
+          # PLUSIEURS FABRICATIONS A LA FOIS (30/09/2026). Deux fabrications qui
+          # finissent ensemble modifient toutes deux index.json : l ancien
+          # « git pull --rebase » s arretait sur ce conflit, et set -e tuait
+          # l etape apres une longue reconstruction. On ne rebase donc plus, et
+          # on ne touche plus aux fichiers du checkout partiel (un « reset
+          # --hard » y effacait glb/, mesure sur banc) : a chaque tentative, le
+          # commit est ASSEMBLE dans un index a part, sur la DERNIERE version de
+          # main, avec nos seuls fichiers et notre seule entree de l index, puis
+          # pousse. Si une fabrication concurrente du MEME site a deja publie sa
+          # maquette, on garde la sienne : elle vaut la notre.
+          SAUVE="$RUNNER_TEMP/maquette_sortie"
+          mkdir -p "$SAUVE"
+          if [ -n "$KEY" ]; then
+            cp glb/"$KEY".* "$SAUVE"/
+            python -c "import json,sys; d=json.load(open('index.json',encoding='utf-8')); json.dump(d[sys.argv[1]],open(sys.argv[2],'w',encoding='utf-8'),ensure_ascii=False)" "$KEY" "$SAUVE/entree.json"
           fi
           MSG="Maquette"
           if [ -n "$KEY" ]; then MSG="$MSG $KEY"; fi
           if [ -n "$P_LABEL" ]; then MSG="$MSG ($P_LABEL)"; fi
-          git commit -m "$MSG [skip ci]"   # [skip ci] : le commit du bot supprime requests/*.json, sans ce marqueur il redeclencherait le workflow pour rien
-          PUSHED=""
-          for i in 1 2 3; do
-            if git push origin main; then
-              PUSHED=1
-              break
+          export GIT_INDEX_FILE="$RUNNER_TEMP/index_maquette"
+          for i in 1 2 3 4 5 6; do
+            git fetch -q --depth=1 origin +refs/heads/main:refs/remotes/origin/main
+            rm -f "$GIT_INDEX_FILE"
+            git read-tree origin/main
+            if [ -n "$KEY" ]; then
+              # ls-tree lit l arbre sans rapatrier la maquette elle-meme
+              if [ -n "$(git ls-tree origin/main -- "glb/$KEY.glb")" ]; then
+                echo "La maquette $KEY est deja publiee par une fabrication concurrente : on garde la sienne."
+              else
+                for f in "$SAUVE"/"$KEY".*; do
+                  git update-index --add --cacheinfo "100644,$(git hash-object -w --no-filters "$f"),glb/$(basename "$f")"
+                done
+                git show origin/main:index.json > "$SAUVE/index_distant.json"
+                python -c "import json,sys; d=json.load(open(sys.argv[3],encoding='utf-8')); d[sys.argv[1]]=json.load(open(sys.argv[2],encoding='utf-8')); f=open(sys.argv[4],'w',encoding='utf-8',newline='\n'); json.dump(d,f,ensure_ascii=False,indent=2,sort_keys=True); f.write('\n'); f.close()" "$KEY" "$SAUVE/entree.json" "$SAUVE/index_distant.json" "$SAUVE/index_fusion.json"
+                git update-index --add --cacheinfo "100644,$(git hash-object -w --no-filters "$SAUVE/index_fusion.json"),index.json"
+              fi
             fi
-            echo "Push refuse (tentative $i sur 3), git pull --rebase puis nouvel essai."
-            git pull --rebase origin main
+            if [ -n "$REQUEST_FILE" ] && [ -n "$(git ls-tree origin/main -- "$REQUEST_FILE")" ]; then
+              git update-index --force-remove "$REQUEST_FILE"
+            fi
+            ARBRE=$(git write-tree)
+            if [ "$ARBRE" = "$(git rev-parse 'origin/main^{tree}')" ]; then
+              echo "Rien a committer."
+              exit 0
+            fi
+            # [skip ci] : le commit du bot supprime requests/*.json, sans ce marqueur il redeclencherait le workflow pour rien
+            COMMIT=$(git commit-tree "$ARBRE" -p origin/main -m "$MSG [skip ci]")
+            if git push -q origin "$COMMIT:refs/heads/main"; then
+              echo "Maquette publiee (tentative $i)."
+              exit 0
+            fi
+            echo "Push refuse (tentative $i sur 6) : une autre fabrication vient de publier. Nouvel essai sur la version a jour."
+            sleep $(( 2 * i + RANDOM % 6 ))
           done
-          if [ -z "$PUSHED" ]; then
-            echo "Push impossible apres 3 tentatives." >&2
-            exit 1
-          fi
+          echo "Push impossible apres 6 tentatives." >&2
+          exit 1
 
       - name: Resume
         if: steps.params.outputs.ok == 'true'
