@@ -1004,6 +1004,36 @@
     },
     "total_s": 82.7
   },
+  "e655200_n6864800_w800": {
+    "arbres": 8677,
+    "batiments": 1235,
+    "cote_m": 800,
+    "dalles": 4,
+    "date": "2026-09-30",
+    "label": "5 Villa Paul Verlaine 75019 Paris",
+    "lat": 48.881426,
+    "lon": 2.389465,
+    "mo": 11.9,
+    "phys": true,
+    "plages": 0,
+    "points": 12401236,
+    "telechargees": 4,
+    "temps": {
+      "1 geometrie": 0.0,
+      "2 dalles WFS": 1.4,
+      "4 telechargement dalles": 9.9,
+      "4b lecture par plages": 0.0,
+      "5 crop + fusion": 5.8,
+      "6 emprises BDTOPO": 1.2,
+      "7 roofer": 43.6,
+      "8a maillage batiments": 4.0,
+      "8b maillage sol": 0.3,
+      "8c arbres": 0.2,
+      "8d grille physique": 6.4,
+      "9 export GLB": 0.2
+    },
+    "total_s": 73.0
+  },
   "e656300_n6862000_w800": {
     "arbres": 8785,
     "batiments": 1315,
