@@ -1182,6 +1182,36 @@
     "mo": 10.93,
     "phys": true
   },
+  "e842500_n6517200_w800": {
+    "arbres": 8260,
+    "batiments": 267,
+    "cote_m": 800,
+    "dalles": 2,
+    "date": "2026-09-30",
+    "label": "8 Rue Crépet 69007 Lyon",
+    "lat": 45.739742,
+    "lon": 4.833261,
+    "mo": 10.08,
+    "phys": true,
+    "plages": 0,
+    "points": 24733542,
+    "telechargees": 2,
+    "temps": {
+      "1 geometrie": 0.0,
+      "2 dalles WFS": 1.5,
+      "4 telechargement dalles": 28.5,
+      "4b lecture par plages": 0.0,
+      "5 crop + fusion": 10.5,
+      "6 emprises BDTOPO": 0.8,
+      "7 roofer": 65.3,
+      "8a maillage batiments": 1.7,
+      "8b maillage sol": 0.4,
+      "8c arbres": 0.2,
+      "8d grille physique": 2.8,
+      "9 export GLB": 0.2
+    },
+    "total_s": 111.8
+  },
   "e842500_n6520300_w2000": {
     "arbres": 8961,
     "batiments": 5000,
