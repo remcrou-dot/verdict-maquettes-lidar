@@ -66,6 +66,36 @@
     },
     "total_s": 36.4
   },
+  "e345300_n6686300_w800": {
+    "arbres": 8425,
+    "batiments": 962,
+    "cote_m": 800,
+    "dalles": 4,
+    "date": "2026-09-30",
+    "label": "13 Impasse Hélène Boucher 44620 La Montagne",
+    "lat": 47.181846,
+    "lon": -1.68595,
+    "mo": 9.7,
+    "phys": true,
+    "plages": 0,
+    "points": 14567626,
+    "telechargees": 4,
+    "temps": {
+      "1 geometrie": 0.0,
+      "2 dalles WFS": 1.3,
+      "4 telechargement dalles": 8.2,
+      "4b lecture par plages": 0.0,
+      "5 crop + fusion": 4.6,
+      "6 emprises BDTOPO": 1.0,
+      "7 roofer": 11.8,
+      "8a maillage batiments": 0.6,
+      "8b maillage sol": 0.2,
+      "8c arbres": 0.1,
+      "8d grille physique": 0.9,
+      "9 export GLB": 0.1
+    },
+    "total_s": 28.8
+  },
   "e345900_n6769200": {
     "arbres": 7447,
     "batiments": 217,
