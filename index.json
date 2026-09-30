@@ -211,6 +211,36 @@
     },
     "total_s": 18.7
   },
+  "e389800_n6409300_w800": {
+    "arbres": 8494,
+    "batiments": 174,
+    "cote_m": 800,
+    "dalles": 4,
+    "date": "2026-09-30",
+    "label": "Lubec 33980 Audenge",
+    "lat": 44.713699,
+    "lon": -0.918426,
+    "mo": 8.85,
+    "phys": true,
+    "plages": 0,
+    "points": 12634160,
+    "telechargees": 4,
+    "temps": {
+      "1 geometrie": 0.0,
+      "2 dalles WFS": 1.2,
+      "4 telechargement dalles": 6.7,
+      "4b lecture par plages": 0.0,
+      "5 crop + fusion": 5.9,
+      "6 emprises BDTOPO": 0.6,
+      "7 roofer": 6.8,
+      "8a maillage batiments": 0.4,
+      "8b maillage sol": 0.5,
+      "8c arbres": 0.3,
+      "8d grille physique": 0.6,
+      "9 export GLB": 0.2
+    },
+    "total_s": 23.2
+  },
   "e410700_n6417900_w600": {
     "arbres": 6915,
     "batiments": 464,
