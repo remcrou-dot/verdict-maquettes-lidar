@@ -1053,6 +1053,36 @@
     },
     "total_s": 44.2
   },
+  "e653000_n6870300_w600": {
+    "arbres": 5124,
+    "batiments": 546,
+    "cote_m": 600,
+    "dalles": 4,
+    "date": "2026-09-30",
+    "label": "33 Rue Pinel 93200 Saint-Denis",
+    "lat": 48.931322,
+    "lon": 2.358727,
+    "mo": 10.04,
+    "phys": true,
+    "plages": 0,
+    "points": 6065451,
+    "telechargees": 4,
+    "temps": {
+      "1 geometrie": 0.0,
+      "2 dalles WFS": 1.1,
+      "4 telechargement dalles": 3.5,
+      "4b lecture par plages": 0.0,
+      "5 crop + fusion": 3.1,
+      "6 emprises BDTOPO": 1.4,
+      "7 roofer": 20.9,
+      "8a maillage batiments": 1.7,
+      "8b maillage sol": 0.4,
+      "8c arbres": 0.1,
+      "8d grille physique": 2.8,
+      "9 export GLB": 0.2
+    },
+    "total_s": 35.2
+  },
   "e654000_n6863100_w800": {
     "arbres": 5074,
     "batiments": 1202,
