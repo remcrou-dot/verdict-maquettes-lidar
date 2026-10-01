@@ -703,6 +703,36 @@
     },
     "total_s": 44.4
   },
+  "e586100_n6652900_w800": {
+    "arbres": 1596,
+    "batiments": 4,
+    "cote_m": 800,
+    "dalles": 4,
+    "date": "2026-10-01",
+    "label": "Domaine de Neffe 36110 Levroux",
+    "lat": 46.966542,
+    "lon": 1.501503,
+    "mo": 8.57,
+    "phys": true,
+    "plages": 0,
+    "points": 25600782,
+    "telechargees": 4,
+    "temps": {
+      "1 geometrie": 0.0,
+      "2 dalles WFS": 0.9,
+      "4 telechargement dalles": 15.3,
+      "4b lecture par plages": 0.0,
+      "5 crop + fusion": 11.6,
+      "6 emprises BDTOPO": 0.3,
+      "7 roofer": 8.8,
+      "8a maillage batiments": 0.0,
+      "8b maillage sol": 0.4,
+      "8c arbres": 0.1,
+      "8d grille physique": 0.0,
+      "9 export GLB": 0.2
+    },
+    "total_s": 37.7
+  },
   "e596300_n6698900": {
     "arbres": 6170,
     "batiments": 23,
