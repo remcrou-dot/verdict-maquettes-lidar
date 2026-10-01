@@ -1422,6 +1422,36 @@
     "mo": 11.48,
     "phys": true
   },
+  "e763900_n6273800_w800": {
+    "arbres": 6255,
+    "batiments": 727,
+    "cote_m": 800,
+    "dalles": 4,
+    "date": "2026-10-01",
+    "label": "35 Rue Gine 34690 Fabrègues",
+    "lat": 43.560539,
+    "lon": 3.791184,
+    "mo": 9.79,
+    "phys": true,
+    "plages": 0,
+    "points": 19064836,
+    "telechargees": 4,
+    "temps": {
+      "1 geometrie": 0.0,
+      "2 dalles WFS": 1.6,
+      "4 telechargement dalles": 44.8,
+      "4b lecture par plages": 0.0,
+      "5 crop + fusion": 9.2,
+      "6 emprises BDTOPO": 1.0,
+      "7 roofer": 26.0,
+      "8a maillage batiments": 0.8,
+      "8b maillage sol": 0.5,
+      "8c arbres": 0.1,
+      "8d grille physique": 1.3,
+      "9 export GLB": 0.1
+    },
+    "total_s": 85.6
+  },
   "e840500_n6513200_w800": {
     "arbres": 8865,
     "batiments": 503,
