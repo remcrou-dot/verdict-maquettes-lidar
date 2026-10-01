@@ -758,6 +758,36 @@
     "mo": 9.8,
     "phys": true
   },
+  "e632000_n6853100_w800": {
+    "arbres": 7685,
+    "batiments": 825,
+    "cote_m": 800,
+    "dalles": 4,
+    "date": "2026-10-01",
+    "label": "1 Place Cendrillon 78280 Guyancourt",
+    "lat": 48.774748,
+    "lon": 2.075223,
+    "mo": 10.31,
+    "phys": true,
+    "plages": 0,
+    "points": 12673095,
+    "telechargees": 4,
+    "temps": {
+      "1 geometrie": 0.0,
+      "2 dalles WFS": 0.9,
+      "4 telechargement dalles": 5.3,
+      "4b lecture par plages": 0.0,
+      "5 crop + fusion": 6.4,
+      "6 emprises BDTOPO": 0.9,
+      "7 roofer": 29.3,
+      "8a maillage batiments": 2.1,
+      "8b maillage sol": 0.4,
+      "8c arbres": 0.2,
+      "8d grille physique": 3.4,
+      "9 export GLB": 0.2
+    },
+    "total_s": 49.0
+  },
   "e640000_n6971500_w800": {
     "arbres": 5725,
     "batiments": 198,
