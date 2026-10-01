@@ -1047,6 +1047,36 @@
     "mo": 13.15,
     "phys": true
   },
+  "e651300_n6860600_w800": {
+    "arbres": 6721,
+    "batiments": 971,
+    "cote_m": 800,
+    "dalles": 4,
+    "date": "2026-10-01",
+    "label": "4 Avenue de l'Observatoire 75006 Paris",
+    "lat": 48.843345,
+    "lon": 2.336329,
+    "mo": 12.66,
+    "phys": true,
+    "plages": 0,
+    "points": 12777213,
+    "telechargees": 4,
+    "temps": {
+      "1 geometrie": 0.0,
+      "2 dalles WFS": 0.8,
+      "4 telechargement dalles": 553.1,
+      "4b lecture par plages": 0.0,
+      "5 crop + fusion": 5.6,
+      "6 emprises BDTOPO": 1.7,
+      "7 roofer": 51.5,
+      "8a maillage batiments": 2.9,
+      "8b maillage sol": 0.3,
+      "8c arbres": 0.1,
+      "8d grille physique": 4.9,
+      "9 export GLB": 0.2
+    },
+    "total_s": 621.2
+  },
   "e651400_n6859900_w600": {
     "arbres": 6549,
     "batiments": 360,
