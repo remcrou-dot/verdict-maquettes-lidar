@@ -2342,6 +2342,36 @@
     "mo": 8.84,
     "phys": true
   },
+  "e964200_n6541900_w800": {
+    "arbres": 8224,
+    "batiments": 257,
+    "cote_m": 800,
+    "dalles": 4,
+    "date": "2026-10-01",
+    "label": "Saint-Jean-de-Sixt",
+    "lat": 45.925256,
+    "lon": 6.409627,
+    "mo": 9.05,
+    "phys": true,
+    "plages": 0,
+    "points": 35992306,
+    "telechargees": 4,
+    "temps": {
+      "1 geometrie": 0.0,
+      "2 dalles WFS": 1.7,
+      "4 telechargement dalles": 53.0,
+      "4b lecture par plages": 0.0,
+      "5 crop + fusion": 16.1,
+      "6 emprises BDTOPO": 1.0,
+      "7 roofer": 21.3,
+      "8a maillage batiments": 0.5,
+      "8b maillage sol": 0.4,
+      "8c arbres": 0.2,
+      "8d grille physique": 0.7,
+      "9 export GLB": 0.2
+    },
+    "total_s": 95.1
+  },
   "e968700_n6454400_w3200": {
     "arbres": 8995,
     "batiments": 339,
