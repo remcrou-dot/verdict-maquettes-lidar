@@ -1558,6 +1558,36 @@
     "mo": 9.08,
     "phys": true
   },
+  "e680500_n6725600_w800": {
+    "arbres": 5806,
+    "batiments": 367,
+    "cote_m": 800,
+    "dalles": 2,
+    "date": "2026-10-02",
+    "label": "15 Rue des Vignes 45250 Briare",
+    "lat": 47.630876,
+    "lon": 2.740736,
+    "mo": 9.08,
+    "phys": true,
+    "plages": 0,
+    "points": 10938437,
+    "telechargees": 2,
+    "temps": {
+      "1 geometrie": 0.0,
+      "2 dalles WFS": 1.1,
+      "4 telechargement dalles": 4.2,
+      "4b lecture par plages": 0.0,
+      "5 crop + fusion": 5.6,
+      "6 emprises BDTOPO": 0.8,
+      "7 roofer": 15.2,
+      "8a maillage batiments": 0.7,
+      "8b maillage sol": 0.3,
+      "8c arbres": 0.2,
+      "8d grille physique": 1.0,
+      "9 export GLB": 0.2
+    },
+    "total_s": 29.3
+  },
   "e683500_n6861800_w800": {
     "arbres": 4768,
     "batiments": 181,
