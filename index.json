@@ -2276,6 +2276,36 @@
     "mo": 11.37,
     "phys": true
   },
+  "e847900_n6519700_w800": {
+    "arbres": 6967,
+    "batiments": 763,
+    "cote_m": 800,
+    "dalles": 4,
+    "date": "2026-10-02",
+    "label": "Rue Léon Blum 69100 Villeurbanne",
+    "lat": 45.760901,
+    "lon": 4.903063,
+    "mo": 10.68,
+    "phys": true,
+    "plages": 0,
+    "points": 26288714,
+    "telechargees": 4,
+    "temps": {
+      "1 geometrie": 0.0,
+      "2 dalles WFS": 0.5,
+      "4 telechargement dalles": 6.4,
+      "4b lecture par plages": 0.0,
+      "5 crop + fusion": 10.8,
+      "6 emprises BDTOPO": 0.7,
+      "7 roofer": 88.1,
+      "8a maillage batiments": 2.5,
+      "8b maillage sol": 0.4,
+      "8c arbres": 0.2,
+      "8d grille physique": 4.1,
+      "9 export GLB": 0.2
+    },
+    "total_s": 113.9
+  },
   "e849400_n6521800_w800": {
     "arbres": 7327,
     "batiments": 579,
