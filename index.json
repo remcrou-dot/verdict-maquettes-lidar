@@ -2407,6 +2407,36 @@
     },
     "total_s": 85.1
   },
+  "e865100_n6315500_w3200": {
+    "arbres": 8994,
+    "batiments": 5000,
+    "cote_m": 3200,
+    "dalles": 20,
+    "date": "2026-10-02",
+    "label": "61 Avenue du General de Gaulle 84800 L'Isle-sur-la-Sorgue",
+    "lat": 43.919526,
+    "lon": 5.056252,
+    "mo": 17.27,
+    "phys": true,
+    "plages": 0,
+    "points": 287234604,
+    "telechargees": 20,
+    "temps": {
+      "1 geometrie": 0.0,
+      "2 dalles WFS": 1.3,
+      "4 telechargement dalles": 50.1,
+      "4b lecture par plages": 0.0,
+      "5 crop + fusion": 76.6,
+      "6 emprises BDTOPO": 2.0,
+      "7 roofer": 137.9,
+      "8a maillage batiments": 4.3,
+      "8b maillage sol": 0.2,
+      "8c arbres": 0.5,
+      "8d grille physique": 6.9,
+      "9 export GLB": 0.2
+    },
+    "total_s": 280.0
+  },
   "e865100_n6315500_w800": {
     "arbres": 7700,
     "batiments": 1689,
