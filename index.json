@@ -2571,6 +2571,36 @@
     "lon": 6.125296,
     "mo": 11.58
   },
+  "e944300_n6389700_w800": {
+    "arbres": 8349,
+    "batiments": 991,
+    "cote_m": 800,
+    "dalles": 4,
+    "date": "2026-10-02",
+    "label": "Gap",
+    "lat": 44.563233,
+    "lon": 6.076778,
+    "mo": 10.76,
+    "phys": true,
+    "plages": 0,
+    "points": 29131882,
+    "telechargees": 4,
+    "temps": {
+      "1 geometrie": 0.0,
+      "2 dalles WFS": 1.0,
+      "4 telechargement dalles": 6.5,
+      "4b lecture par plages": 0.0,
+      "5 crop + fusion": 12.4,
+      "6 emprises BDTOPO": 0.8,
+      "7 roofer": 49.3,
+      "8a maillage batiments": 2.7,
+      "8b maillage sol": 0.4,
+      "8c arbres": 0.3,
+      "8d grille physique": 4.1,
+      "9 export GLB": 0.2
+    },
+    "total_s": 77.7
+  },
   "e956600_n6223700_w800": {
     "arbres": 8829,
     "batiments": 407,
