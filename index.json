@@ -364,6 +364,36 @@
     "mo": 10.19,
     "phys": true
   },
+  "e418100_n6420200_w800": {
+    "arbres": 7551,
+    "batiments": 4043,
+    "cote_m": 800,
+    "dalles": 4,
+    "date": "2026-10-02",
+    "label": "29 Rue Hippolyte Minier 33800 Bordeaux",
+    "lat": 44.823747,
+    "lon": -0.567638,
+    "mo": 14.78,
+    "phys": true,
+    "plages": 0,
+    "points": 9918494,
+    "telechargees": 4,
+    "temps": {
+      "1 geometrie": 0.0,
+      "2 dalles WFS": 1.3,
+      "4 telechargement dalles": 7.1,
+      "4b lecture par plages": 0.0,
+      "5 crop + fusion": 5.1,
+      "6 emprises BDTOPO": 2.0,
+      "7 roofer": 62.6,
+      "8a maillage batiments": 7.8,
+      "8b maillage sol": 0.4,
+      "8c arbres": 0.2,
+      "8d grille physique": 11.7,
+      "9 export GLB": 0.2
+    },
+    "total_s": 98.3
+  },
   "e424900_n6488400_w600": {
     "arbres": 4929,
     "batiments": 22,
