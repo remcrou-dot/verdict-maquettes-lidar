@@ -364,6 +364,36 @@
     "mo": 10.19,
     "phys": true
   },
+  "e417300_n6421600_w800": {
+    "arbres": 5097,
+    "batiments": 2454,
+    "cote_m": 800,
+    "dalles": 4,
+    "date": "2026-10-02",
+    "label": "64 Rue du Hâ 33000 Bordeaux",
+    "lat": 44.835987,
+    "lon": -0.578269,
+    "mo": 15.1,
+    "phys": true,
+    "plages": 0,
+    "points": 9020409,
+    "telechargees": 4,
+    "temps": {
+      "1 geometrie": 0.0,
+      "2 dalles WFS": 1.0,
+      "4 telechargement dalles": 11.4,
+      "4b lecture par plages": 0.0,
+      "5 crop + fusion": 4.6,
+      "6 emprises BDTOPO": 1.4,
+      "7 roofer": 63.0,
+      "8a maillage batiments": 7.5,
+      "8b maillage sol": 0.4,
+      "8c arbres": 0.1,
+      "8d grille physique": 12.4,
+      "9 export GLB": 0.2
+    },
+    "total_s": 102.0
+  },
   "e418100_n6420200_w800": {
     "arbres": 7551,
     "batiments": 4043,
